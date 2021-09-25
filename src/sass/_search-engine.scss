@@ -1,51 +1,33 @@
-html {
-  box-sizing: border-box;
-  background-image: linear-gradient(to bottom, #dbc8b6, #030d47);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  overflow: hidden;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-  //   outline: 1px solid tomato;
-}
-
-body {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-button {
-  display: block;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
 .search-engine {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   justify-content: center;
-  padding: 60px 30px;
+  align-items: center;
+  padding: 80px 30px;
 }
 
 .search-form {
   display: flex;
   align-items: center;
+  width: 700px;
   justify-content: center;
-  border: 2px solid rgb(12, 12, 46);
+  border: 2px solid $basic-dark;
   border-radius: 3px;
+}
+
+.form__container {
+  display: flex;
+  justify-content: center;
 }
 
 .form__input {
   margin-right: 50px;
+  width: 400px;
+  text-align: center;
   display: block;
-  color: black;
-  border: 3px rgb(11, 11, 53);
+  color: $basic-dark;
+  border: 3px $basic-dark;
   border-radius: 3px;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -59,7 +41,15 @@ button {
   color: rgb(250, 244, 235);
   width: 100px;
   border-radius: 3px;
-  background-color: rgb(11, 11, 49);
+  background-color: $basic-dark;
+}
+
+.load {
+  width: 500px;
+  padding: 7px 0;
+  border-radius: 3px;
+  font-weight: 600;
+  color: $basic-dark;
 }
 
 .visually-hidden {
@@ -71,4 +61,38 @@ button {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden;
+}
+
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gallery__item {
+  display: flex;
+  align-items: center;
+  background-color: $gallery-item-bg;
+  border-radius: 3px;
+  object-fit: cover;
+  object-position: 50px;
+  box-shadow: $card-shadow;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.photo-card__img {
+  border-radius: 3px;
+  object-fit: cover;
+}
+.stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list__heading {
+  text-align: center;
 }
