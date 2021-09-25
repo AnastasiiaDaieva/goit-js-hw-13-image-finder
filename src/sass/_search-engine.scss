@@ -79,18 +79,21 @@
   object-fit: cover;
   object-position: 50px;
   box-shadow: $card-shadow;
-  &:not(:last-child) {
-    margin-bottom: 30px;
-  }
+  margin-bottom: 30px;
 }
-
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
 .photo-card__img {
   border-radius: 3px;
+  height: 200px;
   object-fit: cover;
 }
 .stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .list__heading {
