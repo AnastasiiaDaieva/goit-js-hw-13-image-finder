@@ -69,8 +69,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-}
 
+  margin-left: calc(-1 * 20px);
+  margin-top: calc(-1 * 20px);
+}
+.gallery > .gallery__item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-left: 10px;
+  margin-top: 10px;
+}
 .gallery__item {
   display: flex;
   align-items: center;
@@ -96,6 +103,18 @@
   justify-content: space-evenly;
 }
 
+.list-container {
+  margin-bottom: 30px;
+}
 .list__heading {
   text-align: center;
+}
+
+.button__scrollup {
+  position: fixed;
+  right: 30px;
+  box-shadow: none;
+  bottom: 30px;
+  background-color: transparent;
+  border-radius: 50%;
 }
