@@ -1,6 +1,7 @@
 import Notiflix from 'notiflix';
 import form from '../templates/form.hbs';
 import gallery from '../templates/gallery.hbs';
+import imgcard from '../templates/imgcard.hbs';
 import fetchImages from './fetchImages';
 import refs from './refs';
 const { btnLoad, btnForm, searchContainer } = refs;
@@ -16,10 +17,17 @@ const searchForm = document.querySelector('.search-form');
 const inputAccess = document.getElementById('search');
 // console.log(inputAccess);
 function renderGallery(dataRef) {
-  console.log(dataRef);
-  dataRef.map(item => {
-    let markup = gallery(item);
-    searchContainer.insertAdjacentHTML('beforeend', markup);
+  console.log(dataRef.hits);
+  const listMarkup = gallery();
+  searchContainer.insertAdjacentHTML('beforeend', listMarkup);
+  const galleryAccess = document.querySelector('.gallery');
+  dataRef.hits.map(item => {
+    const newLi = document.createElement('li');
+    console.log(newLi);
+    newLi.classList.add('gallery__item');
+    const newCard = imgcard(item);
+    newLi.append(newCard);
+    galleryAccess.insertAdjacentHTML('beforeend', newLi);
   });
 }
 searchForm.addEventListener('submit', e => {
