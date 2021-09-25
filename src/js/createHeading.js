@@ -1,6 +1,6 @@
 import refs from './refs';
 
-const { btnLoad, btnForm, searchContainer, listContainer } = refs;
+const { listContainer } = refs;
 export default function createHeading(queryRef) {
   const elementExists = document.querySelector('.list__heading');
   console.log(elementExists);

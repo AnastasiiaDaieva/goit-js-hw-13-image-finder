@@ -4,7 +4,7 @@ import manageLoadButton from './manageLoadButton';
 import gallery from '../templates/gallery.hbs';
 import imgcard from '../templates/imgcard.hbs';
 import refs from './refs';
-const { btnLoad, btnForm, searchContainer, listContainer } = refs;
+const { listContainer } = refs;
 
 export default function renderGallery(dataRef, queryRef) {
   console.log(dataRef);

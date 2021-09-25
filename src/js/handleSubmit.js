@@ -3,7 +3,7 @@ import renderGallery from './renderGallery';
 import funcs from './apiService';
 const { fetchImages, fetchMoreImages } = funcs;
 import refs from './refs';
-const { btnLoad, btnForm, searchContainer, listContainer } = refs;
+const { btnLoad, listContainer } = refs;
 
 export default function handleSubmit(e) {
   e.preventDefault();

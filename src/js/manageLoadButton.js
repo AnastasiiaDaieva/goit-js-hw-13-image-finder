@@ -1,5 +1,5 @@
 import refs from './refs';
-const { btnLoad, btnForm, searchContainer, listContainer } = refs;
+const { btnLoad } = refs;
 
 export default function manageLoadButton(totalNumber, leftNumber) {
   if (totalNumber <= 12) {
