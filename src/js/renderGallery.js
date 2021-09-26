@@ -19,6 +19,7 @@ export default function renderGallery(dataRef, queryRef) {
     const newCard = imgcard(item);
     galleryAccess.insertAdjacentHTML('beforeend', newCard);
   });
+
   manageLoadButton(total, hits);
   const elementForId = hits[0].id;
   console.log(elementForId);
