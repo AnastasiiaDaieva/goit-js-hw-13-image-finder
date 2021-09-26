@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 import apiService from './apiService';
 import request from './request';
 import refs from './refs';
-const { listContainer } = refs;
+const { btnLoad, listContainer } = refs;
 
 export default function handleSubmit(e) {
   e.preventDefault();
@@ -14,6 +14,7 @@ export default function handleSubmit(e) {
   listContainer.innerHTML = '';
   apiService.resetPageNumber();
   if (checkQuery == '') {
+    btnLoad.classList.add('visually-hidden');
     Notiflix.Notify.warning('Enter the query please!');
   } else {
     request();
