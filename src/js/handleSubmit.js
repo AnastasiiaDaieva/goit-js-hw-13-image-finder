@@ -1,7 +1,7 @@
 import renderGallery from './renderGallery';
+import Notiflix from 'notiflix';
 
-import funcs from './apiService';
-const { fetchImages, fetchMoreImages } = funcs;
+import fetchImages from './apiService';
 import refs from './refs';
 const { btnLoad, listContainer } = refs;
 
@@ -16,7 +16,7 @@ export default function handleSubmit(e) {
     fetchImages(query).then(data => renderGallery(data, query));
     listContainer.innerHTML = '';
     btnLoad.addEventListener('click', e => {
-      fetchMoreImages(query).then(data => renderGallery(data, query));
+      fetchImages(query).then(data => renderGallery(data, query));
     });
   }
 }
