@@ -19,6 +19,7 @@ export default function renderGallery(dataRef, queryRef) {
     const newCard = imgcard(item);
     galleryAccess.insertAdjacentHTML('beforeend', newCard);
   });
+
   manageLoadButton(total, hits);
 
   const elementForId = hits[0].id;
@@ -29,6 +30,11 @@ export default function renderGallery(dataRef, queryRef) {
     behavior: 'smooth',
     block: 'start',
   });
+  // window.scrollTo({
+  //   top: document.documentElement.offsetHeight,
+  //   behavior: 'smooth',
+  //   //   block: 'start',
+  // });
 
   galleryAccess.addEventListener('click', handleModal);
 }
