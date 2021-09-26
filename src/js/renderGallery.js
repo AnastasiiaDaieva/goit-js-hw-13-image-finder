@@ -29,6 +29,11 @@ export default function renderGallery(dataRef, queryRef) {
     behavior: 'smooth',
     block: 'start',
   });
+  // window.scrollTo({
+  //   top: document.documentElement.offsetHeight,
+  //   behavior: 'smooth',
+  //   //   block: 'start',
+  // });
 
   galleryAccess.addEventListener('click', handleModal);
 }

@@ -1,24 +1,21 @@
-import renderGallery from './renderGallery';
 import Notiflix from 'notiflix';
 
 import apiService from './apiService';
-const { fetchImages } = apiService;
-
+import request from './request';
 import refs from './refs';
-const { btnLoad, listContainer } = refs;
+const { listContainer } = refs;
 
 export default function handleSubmit(e) {
   e.preventDefault();
-  console.log(e.target.elements.search.value.trim());
-  let query = e.target.elements.search.value.trim();
+
+  apiService.query = e.target.elements.search.value.trim();
+  const checkQuery = e.target.elements.search.value.trim();
+
+  listContainer.innerHTML = '';
   apiService.resetPageNumber();
-  if (query == '') {
+  if (checkQuery == '') {
     Notiflix.Notify.warning('Enter the query please!');
   } else {
-    fetchImages(query).then(data => renderGallery(data, query));
-    listContainer.innerHTML = '';
-    btnLoad.addEventListener('click', e => {
-      fetchImages(query).then(data => renderGallery(data, query));
-    });
+    request();
   }
 }
