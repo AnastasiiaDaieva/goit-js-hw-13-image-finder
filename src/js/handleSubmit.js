@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import createHeading from './createHeading';
 
 import apiService from './apiService';
 import request from './request';
@@ -8,8 +9,8 @@ const { btnLoad, listContainer } = refs;
 export default function handleSubmit(e) {
   e.preventDefault();
 
-  apiService.query = e.target.elements.search.value.trim();
   const checkQuery = e.target.elements.search.value.trim();
+  apiService.query = checkQuery;
 
   listContainer.innerHTML = '';
   apiService.resetPageNumber();
@@ -17,6 +18,7 @@ export default function handleSubmit(e) {
     btnLoad.classList.add('visually-hidden');
     Notiflix.Notify.warning('Enter the query please!');
   } else {
+    createHeading(checkQuery);
     request();
   }
 }

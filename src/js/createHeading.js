@@ -3,7 +3,7 @@ import refs from './refs';
 const { listContainer } = refs;
 export default function createHeading(queryRef) {
   const elementExists = document.querySelector('.list__heading');
-  console.log(elementExists);
+  // console.log(elementExists);
   if (elementExists == null) {
     const createHeading = document.createElement('h2');
     createHeading.classList.add('list__heading');

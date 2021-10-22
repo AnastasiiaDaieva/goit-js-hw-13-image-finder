@@ -8,7 +8,7 @@ export default {
   searchQuery: '',
   fetchImages() {
     const url = `${BASE_URL}/${params}&q=${this.searchQuery}&page=${this.pageNumber}&per_page=12&key=${API_KEY}`;
-    console.log(url);
+    // console.log(url);
     return fetch(url)
       .then(response => {
         if (response.ok) return response.json();
